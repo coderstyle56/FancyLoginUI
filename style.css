@@ -1,0 +1,229 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+header nav .right-section {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.btn-enroll {
+    width: 5vw;
+    padding: 2px;
+    background-color: aliceblue;
+    color: rgb(3, 155, 3);
+    border-radius: 15px;
+    border: 1px light black;
+}
+
+.btn-enroll:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.cover img {
+    width: calc(100vw - 40px); /* Full width minus padding/margin */
+    height: calc(100vh - 40px); /* Full height minus padding/margin */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    animation: zoomInFadeIn 1.5s ease-out forwards, toRight 1s ease 2s forwards;
+    animation-delay: 0s, 0.7s;
+}
+
+/* Keyframes to move the cover to the right (shrink) */
+@keyframes toRight {
+    0% {
+        width: calc(100vw - 40px);
+        left: 20px;
+    }
+    100% {
+        width: calc(50vw - 40px);
+        left: calc(50vw + 20px);
+    }
+}
+
+/* Corrected Reverse movement of the cover image */
+
+
+/* Keyframes for zoom-in effect */
+@keyframes zoomInFadeIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes toRight {
+    0% {
+        width: calc(100vw - 40px); /* Start full width minus margin */
+        left: 20px; /* Positioned with margin */
+    }
+    100% {
+        width: calc(50vw - 40px); /* Shrink to half width minus margin */
+        left: calc(50vw + 20px); /* Move it to the right side with margin */
+    }
+}
+
+/* Keyframes for bottom-up animation */
+@keyframes bottomUpContent {
+    0% {
+        transform: translateY(100px); /* Start 100px below */
+        opacity: 0; /* Start fully invisible */
+    }
+    100% {
+        transform: translateY(0); /* End at its normal position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateX(0); /* Move to the default position */
+        opacity: 1; /* Become visible */
+    }
+}
+
+/* Add a class to trigger the animation */
+.show-right-section {
+    animation: slideInFromRight 1s ease forwards; /* Adjust duration as needed */
+}
+
+/* Apply animation to form content only */
+.show-form .form-content {
+    animation: bottomUpContent 1s ease-out forwards;
+}
+
+/* Updated styles for the form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(50vw - 40px);
+    height: calc(100vh - 40px); /* Ensure it takes full height */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* Make the form visible after animation */
+.show-form {
+    display: block;
+    opacity: 1;
+}
+
+.login-form h5 {
+    margin-bottom: 15px;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.login-form h1 {
+    font-weight: 700;
+    margin-top: 80px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 50%;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.login-form input[type="checkbox"] {
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.login-form .btn-login {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(46, 236, 81);
+    color: black;
+}
+
+.login-form .btn-login:hover {
+    cursor: pointer;
+    background-color: rgb(34, 145, 34);
+    transform: scale(1.1);
+}
+
+.abyss ul {
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 12px;
+    color: green;
+    font-weight: 300;
+}
+
+.abyss ul:hover {
+    cursor: pointer;
+}
+
+.ftn {
+    margin-top: 180px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.filled-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.filled-input:focus {
+    outline: none;
+    background-color: #e0e0e0;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+
+
